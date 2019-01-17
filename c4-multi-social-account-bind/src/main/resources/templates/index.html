@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<h1>Login/ bind</h1>
+<p>
+    With Github: <a href="/login/github">click here</a>
+</p>
+<p>
+    With weibo : <a href="/login/weibo">click here</a>
+</p>
+<p>
+    With Facebook : <a href="/login/facebook">click here</a>
+</p>
+<hr/>
+<a href="/connect">view connects</a>
+<br/>
+<br/>
+<form action="/logout" method="post">
+    <button type="submit">logout</button>
+</form>
+<br/>
+<h3>principal : </h3>
+<p id="principal"></p>
+
+<script>
+    function setPrincipal() {
+        $.get("/user", function (data) {
+            $("#principal").text(JSON.stringify(data));
+        });
+    }
+
+    $(document).ready(function () {
+        setPrincipal();
+    });
+</script>
+</body>
+</html>

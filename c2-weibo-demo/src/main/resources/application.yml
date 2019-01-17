@@ -1,0 +1,14 @@
+weibo:
+  client:
+    clientId: 644336069
+    clientSecret: be57719150f4085a92120bd2f012861a
+
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+
+logging:
+  level:
+    root: debug
